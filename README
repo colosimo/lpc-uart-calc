@@ -1,0 +1,23 @@
+***********************
+* LPC UART Calculator *
+***********************
+
+This simple program permits to compute UART initialization register values
+for NXP's LPC111x MCU family.
+
+Algorithm is directly taken from NXP User Manual (chapter 13.5.15 of
+UM10398.pdf file).
+
+It accepts UART Peripheral Clock (UART_PCLK) and baudrate as input.
+(UART_PCLK is directly derived from main clock by means of UARTCLKDIV register).
+
+Sample output:
+
+$ ./lpc-uart-calc 12000000 115200
+DIVADDVAL = 5 (0x5)
+MULVAL = 8 (0x8)
+DLM = 0 (0x00)
+DLL = 4 (0x04)
+Desired Baudrate = 115200.00
+Actual  Baudrate = 115384.62
+Error = 0.16%
