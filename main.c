@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 		div = 0;
 		mul = 1;
 		br_act = br;
+		dl_est = uart_pclk / (16 * br);
 		goto done;
 	}
 
